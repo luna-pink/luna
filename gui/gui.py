@@ -5,6 +5,7 @@ This module contains the user interface for the application.
 import flet
 
 import config
+from gui import components
 
 
 async def user_interface(page: flet.Page):
@@ -13,9 +14,14 @@ async def user_interface(page: flet.Page):
     :param page:
     :return:
     """
-    settings = config.InterfaceSettings()
-    for setting, value in settings.__dict__.items():
+    for setting, value in config.InterfaceSettings().__dict__.items():
         setattr(page, setting, value)
+
+    await page.window_center_async()
+
+    await page.add_async(
+        components.base
+    )
 
     await page.update_async()
 
