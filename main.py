@@ -8,6 +8,8 @@
 
 import argparse
 
+import gui
+
 
 def main():
     """
@@ -38,6 +40,8 @@ def main():
         action='store_true',
         help='Enable verbose logging.'
     )
+
+    gui.initialize_ui()
 
 
 if __name__ == '__main__':
