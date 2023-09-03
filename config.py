@@ -8,6 +8,9 @@ from dataclasses import dataclass
 # noinspection PyUnusedName
 @dataclass
 class InterfaceSettings:
+    """
+    The InterfaceSettings class is used to store the settings of the interface.
+    """
     title: str = "luna"
     window_width: int = 1000
     window_height: int = 700
