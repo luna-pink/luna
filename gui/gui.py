@@ -1,3 +1,7 @@
+"""
+This module contains the user interface for the application.
+"""
+
 import flet
 
 import config

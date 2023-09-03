@@ -1,3 +1,7 @@
+"""
+The config module is used to store the configuration of the application.
+"""
+
 from dataclasses import dataclass
 
 
