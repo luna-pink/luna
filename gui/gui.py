@@ -6,6 +6,7 @@ import flet
 
 import config
 from gui import components
+from .style import theme
 
 
 async def user_interface(page: flet.Page):
@@ -16,6 +17,9 @@ async def user_interface(page: flet.Page):
     """
     for setting, value in config.InterfaceSettings().__dict__.items():
         setattr(page, setting, value)
+
+    page.theme = theme
+    page.theme_mode = flet.ThemeMode.DARK
 
     await page.window_center_async()
 

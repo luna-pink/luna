@@ -6,10 +6,21 @@ It is the first container to be rendered.
 import flet
 
 import config
+from gui.pages import Loading
 
 components = config.Components([]).components
 
+active_page = flet.AnimatedSwitcher(
+    Loading(),
+    transition=flet.AnimatedSwitcherTransition.SCALE,
+    duration=500,
+    reverse_duration=100,
+    switch_in_curve=flet.AnimationCurve.LINEAR_TO_EASE_OUT,
+    switch_out_curve=flet.AnimationCurve.LINEAR_TO_EASE_OUT,
+)
+
 view_base = flet.Container(
+    content=active_page,
     # image_src="background.png",
     blur=3,
     image_fit=flet.ImageFit.COVER,
@@ -53,11 +64,10 @@ base = flet.Container(
         ],
         alignment=flet.MainAxisAlignment.CENTER,
         vertical_alignment=flet.CrossAxisAlignment.START,
-        spacing=0
+        spacing=0,
     ),
     alignment=flet.alignment.center,
-    # image_src="background.png",
-    image_src="https://wallpaperaccess.com/full/8351171.gif",
+    image_src="background.gif",
     image_fit=flet.ImageFit.COVER,
     expand=True,
     margin=0,
